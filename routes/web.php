@@ -15,5 +15,5 @@ Route::get('shop', [LandingPageController::class, 'shop'])->name('shop');
 Route::get('shop-detail', [LandingPageController::class, 'shop_detail'])->name('shop_detail');
 Route::get('chart', [LandingPageController::class, 'chart'])->name('chart');
 Route::get('checkout', [LandingPageController::class, 'checkout'])->name('checkout');
-Route::get('testimoni', [LandingPageController::class, 'testimoni'])->name('testimoni');
+Route::get('testimonial', [LandingPageController::class, 'testimonial'])->name('testimonial');
 Route::get('contact', [LandingPageController::class, 'contact'])->name('contact');

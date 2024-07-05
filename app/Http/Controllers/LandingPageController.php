@@ -34,9 +34,9 @@ class LandingPageController extends Controller
         return view('checkout');
     }
 
-    public function testimoni()
+    public function testimonial()
     {
-        return view('testimoni');
+        return view('testimonial');
     }
 
     public function contact()
