@@ -43,4 +43,12 @@ class LandingPageController extends Controller
     {
         return view('contact');
     }
+    public function login()
+    {
+        return view('login');
+    }
+    public function daftar()
+    {
+        return view('daftar');
+    }
 }

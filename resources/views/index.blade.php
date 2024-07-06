@@ -9,8 +9,8 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-12 col-lg-7">
-                    <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                    <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                    <h4 class="mb-3 text-secondary">100% Produk Lokal</h4>
+                    <h1 class="mb-5 display-3 text-primary">Produk Lokal, Kualitas Global</h1>
                     {{-- <div class="position-relative mx-auto">
                         <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
                             placeholder="Search">
@@ -25,11 +25,11 @@
                             <div class="carousel-item active rounded">
                                 <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
                                     alt="First slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
+                                <a href="#" class="btn px-4 py-2 text-white rounded">Dari Rakyat</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
+                                <a href="#" class="btn px-4 py-2 text-white rounded">Untuk Rakyat</a>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -57,33 +57,33 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fas fa-car-side fa-3x text-white"></i>
+                            <i class="fa-solid fa-user-pen fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>Free Shipping</h5>
-                            <p class="mb-0">Free on order over $300</p>
+                            <h5>Perizinan</h5>
+                            <p class="mb-0">Informasi Perizinan</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fas fa-user-shield fa-3x text-white"></i>
+                            <i class="fa-solid fa-hand-holding-dollar fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>Security Payment</h5>
-                            <p class="mb-0">100% security payment</p>
+                            <h5>Pembiayaan</h5>
+                            <p class="mb-0">Informasi Pembiayaan</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                            <i class="fa-solid fa-bullhorn fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>30 Day Return</h5>
-                            <p class="mb-0">30 day money guarantee</p>
+                            <h5>Pemasaran</h5>
+                            <p class="mb-0">Informasi Pemasaran</p>
                         </div>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
                             <i class="fa fa-phone-alt fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>24/7 Support</h5>
-                            <p class="mb-0">Support every time fast</p>
+                            <h5>Dukungan 24 Jam</h5>
+                            <p class="mb-0">Dukungan kapanpun</p>
                         </div>
                     </div>
                 </div>
@@ -786,33 +786,30 @@
     <!-- Banner Section End -->
 
 
-    <!-- Bestsaler Product Start -->
+    <!-- Product Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
-                <h1 class="display-4">Bestseller Products</h1>
-                <p>Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which
-                    looks reasonable.</p>
+                <h1 class="display-4">Produk UMKM</h1>
+                <p>Temukan beragam produk lokal berkualitas dari UMKM terbaik di Indonesia. Dari makanan
+                    lezat hingga kerajinan tangan unik, semua ada di sini!</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6 col-xl-4">
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="#" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
@@ -927,7 +924,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
+                {{-- <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
                         <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
                         <div class="py-4">
@@ -998,11 +995,11 @@
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
-    <!-- Bestsaler Product End -->
+    <!-- Product End -->
 
 
     <!-- Fact Start -->
@@ -1012,30 +1009,30 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>satisfied customers</h4>
-                            <h1>1963</h1>
+                            <i class="fa-solid fa-shop text-secondary"></i>
+                            <h4>1000+ UMKM</h4>
+                            <h6>UMKM yang Berkolaborasi</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa-solid fa-cart-shopping text-secondary"></i>
+                            <h4>Toko Online</h4>
+                            <h6>Produk UMKM</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa-solid fa-utensils text-secondary"></i>
+                            <h4>1000+ Produk</h4>
+                            <h6>Produk UMKM Indonesia</h6>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="counter bg-white rounded p-5">
                             <i class="fa fa-users text-secondary"></i>
-                            <h4>quality of service</h4>
-                            <h1>99%</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>quality certificates</h4>
-                            <h1>33</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>Available Products</h4>
-                            <h1>789</h1>
+                            <h4>100+ Pembina</h4>
+                            <h6>Pembina Berpengalaman</h6>
                         </div>
                     </div>
                 </div>
@@ -1045,12 +1042,12 @@
     <!-- Fact Start -->
 
 
-    <!-- Tastimonial Start -->
+    <!-- Pembina Start -->
     <div class="container-fluid testimonial py-5">
         <div class="container py-5">
             <div class="testimonial-header text-center">
-                <h4 class="text-primary">Our Testimonial</h4>
-                <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
+                <h4 class="text-primary">Pembina</h4>
+                <h1 class="display-10 mb-5 text-dark">Pembina Kami yang Berpengalaman</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item img-border-radius bg-light rounded p-4">
@@ -1058,8 +1055,8 @@
                         <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                             style="bottom: 30px; right: 0;"></i>
                         <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                            <p class="mb-0">Kami mengundang Anda untuk bergabung dalam program pembinaan kami. Dapatkan
+                                bimbingan dan dukungan yang Anda butuhkan untuk mengembangkan usaha Anda.
                             </p>
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
@@ -1068,8 +1065,8 @@
                                     style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
+                                <h4 class="text-dark">Agas</h4>
+                                <p class="m-0 pb-3">Pembina UMKM</p>
                                 <div class="d-flex pe-5">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
@@ -1140,67 +1137,7 @@
             </div>
         </div>
     </div>
-    <!-- Tastimonial End -->
-
-    <!-- Pendaftaran Start -->
-    <div class="container-fluid contact py-5">
-        <div class="container py-5">
-            <div class="p-5 bg-light rounded">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="text-center mx-auto" style="max-width: 700px;">
-                            <h1 class="text-primary">Get in touch</h1>
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
-                                form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and
-                                you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        </div>
-                    </div>
-                    {{-- <div class="col-lg-12">
-                        <div class="h-100 rounded">
-                            <iframe class="rounded w-100" style="height: 400px;"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div> --}}
-                    <div class="col-lg-7">
-                        <form action="" class="">
-                            <input type="text" class="w-100 form-control border-0 py-3 mb-4"
-                                placeholder="Nama Lengkap">
-                            <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Email">
-                            <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Nama UMKM">
-                            <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Informasi UMKM"></textarea>
-                            <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary "
-                                type="submit">Submit</button>
-                        </form>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex p-4 rounded mb-4 bg-white">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p class="mb-2">123 Street New York.USA</p>
-                            </div>
-                        </div>
-                        <div class="d-flex p-4 rounded mb-4 bg-white">
-                            <i class="fas fa-envelope fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Mail Us</h4>
-                                <p class="mb-2">info@example.com</p>
-                            </div>
-                        </div>
-                        <div class="d-flex p-4 rounded bg-white">
-                            <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Telephone</h4>
-                                <p class="mb-2">(+012) 3456 7890</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pendaftaran End -->
+    <!-- Pembina End -->
 @endsection
 
 @section('template_scripts')
