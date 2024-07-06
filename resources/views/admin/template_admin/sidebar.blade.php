@@ -203,7 +203,7 @@
         <div class="collapse navbar-collapse" id="sidebar-menu">
             <ul class="navbar-nav pt-lg-3">
                 <li class="nav-item" id="nav-item-dashboard">
-                    <a class="nav-link" id="nav-link-dashboard" href="{{ url('dashboard/list') }}">
+                    <a class="nav-link" id="nav-link-dashboard" href="{{ url('admin/dashboard/list') }}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -221,7 +221,7 @@
                 </li>
 
                 <li class="nav-item" id="nav-item-umkm">
-                    <a class="nav-link" id="nav-link-umkm" href="{{ url('umkm/list') }}">
+                    <a class="nav-link" id="nav-link-umkm" href="{{ url('admin/umkm/list') }}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -240,7 +240,7 @@
                 </li>
 
                 <li class="nav-item" id="nav-item-pembina">
-                    <a class="nav-link" id="nav-link-pembina" href="{{ url('pembina/list') }}">
+                    <a class="nav-link" id="nav-link-pembina" href="{{ url('admin/pembina/list') }}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
