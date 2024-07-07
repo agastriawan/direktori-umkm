@@ -23,13 +23,14 @@
                     <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active rounded">
-                                <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
-                                    alt="First slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Dari Rakyat</a>
+                                <img src={{ asset('assets/img/slide1.png') }}
+                                    class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
+                                <a href="#" class="btn px-4 py-2 text-white rounded">UMKMnesia</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Untuk Rakyat</a>
+                                <img src={{ asset('assets/img/slide2.png') }}
+                                    class="img-fluid w-100 h-100 bg-secondary rounded" alt="Second slide">
+                                <a href="#" class="btn px-4 py-2 text-white rounded">UMKMnesia</a>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -803,7 +804,7 @@
                                     alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Teh Poci Milo</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
                                 <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
                                     <i class="fa-solid fa-user"> Kafi</i>
@@ -818,20 +819,17 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-2.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
@@ -840,20 +838,17 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-3.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
@@ -862,20 +857,17 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-4.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
@@ -884,20 +876,17 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-5.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
@@ -906,96 +895,26 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-6.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets/img/teh poci.webp') }}" class="img-fluid rounded-circle w-100"
+                                    alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Organic Tomato</a>
+                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
+                                <h5 class="mb-3">RP. 9.000</h5>
                                 <div class="d-flex my-3">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fa-solid fa-user"> Kafi</i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="text-center">
-                        <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
-                        <div class="py-4">
-                            <a href="#" class="h5">Organic Tomato</a>
-                            <div class="d-flex my-3 justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="mb-3">3.12 $</h4>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                        </div>
-                    </div>
+                <div class="col-lg-3 ms-auto">
+                    <a class="w-100 btn border-secondary py-3 bg-white text-primary mt-3"
+                        href="{{ url('umkm') }}">Semua
+                        Produk <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="text-center">
-                        <img src="img/fruite-item-2.jpg" class="img-fluid rounded" alt="">
-                        <div class="py-4">
-                            <a href="#" class="h5">Organic Tomato</a>
-                            <div class="d-flex my-3 justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="mb-3">3.12 $</h4>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="text-center">
-                        <img src="img/fruite-item-3.jpg" class="img-fluid rounded" alt="">
-                        <div class="py-4">
-                            <a href="#" class="h5">Organic Tomato</a>
-                            <div class="d-flex my-3 justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="mb-3">3.12 $</h4>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="text-center">
-                        <img src="img/fruite-item-4.jpg" class="img-fluid rounded" alt="">
-                        <div class="py-2">
-                            <a href="#" class="h5">Organic Tomato</a>
-                            <div class="d-flex my-3 justify-content-center">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="mb-3">3.12 $</h4>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
@@ -1055,13 +974,13 @@
                         <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                             style="bottom: 30px; right: 0;"></i>
                         <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Kami mengundang Anda untuk bergabung dalam program pembinaan kami. Dapatkan
-                                bimbingan dan dukungan yang Anda butuhkan untuk mengembangkan usaha Anda.
+                            <p class="mb-0">Kesuksesan datang kepada mereka yang bertindak, bukan mereka yang hanya
+                                berharap.
                             </p>
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
                             <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
+                                <img src={{ asset('assets/img/pembina1.png') }} class="img-fluid rounded"
                                     style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
@@ -1083,24 +1002,24 @@
                         <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                             style="bottom: 30px; right: 0;"></i>
                         <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                            <p class="mb-0">Kesuksesan datang kepada mereka yang bertindak, bukan mereka yang hanya
+                                berharap.
                             </p>
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
                             <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
+                                <img src={{ asset('assets/img/pembina1.png') }} class="img-fluid rounded"
                                     style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
+                                <h4 class="text-dark">Agas</h4>
+                                <p class="m-0 pb-3">Pembina UMKM</p>
                                 <div class="d-flex pe-5">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
@@ -1111,29 +1030,33 @@
                         <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                             style="bottom: 30px; right: 0;"></i>
                         <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
+                            <p class="mb-0">Kesuksesan datang kepada mereka yang bertindak, bukan mereka yang hanya
+                                berharap.
                             </p>
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
                             <div class="bg-secondary rounded">
-                                <img src="img/testimonial-1.jpg" class="img-fluid rounded"
+                                <img src={{ asset('assets/img/pembina1.png') }} class="img-fluid rounded"
                                     style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
-                                <p class="m-0 pb-3">Profession</p>
+                                <h4 class="text-dark">Agas</h4>
+                                <p class="m-0 pb-3">Pembina UMKM</p>
                                 <div class="d-flex pe-5">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-3 ms-auto">
+                <a class="w-100 btn border-secondary py-3 bg-white text-primary mt-3" href="{{ url('pembina') }}">Semua
+                    Pembina <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>

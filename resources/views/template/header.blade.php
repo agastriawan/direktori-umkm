@@ -25,9 +25,9 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="{{ url('/') }}" class="nav-item nav-link active">Beranda</a>
-                    <a href="{{ url('shop') }}" class="nav-item nav-link">UMKM</a>
-                    <a href="{{ url('testimonial') }}" class="nav-item nav-link">Pembina</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link">Beranda</a>
+                    <a href="{{ url('umkm') }}" class="nav-item nav-link">UMKM</a>
+                    <a href="{{ url('pembina') }}" class="nav-item nav-link">Pembina</a>
                     {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pembina</a>
                         <div class="dropdown-menu m-0 bg-secondary rounded-0">

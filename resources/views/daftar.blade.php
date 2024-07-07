@@ -53,7 +53,7 @@
                     </span>
                     <div class="col-lg-2 mt-3">
                         <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary "
-                            type="submit">Submit</button>
+                            type="submit">Daftar</button>
                     </div>
                 </form>
             </div>
