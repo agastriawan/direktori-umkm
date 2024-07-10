@@ -9,11 +9,11 @@ use App\Http\Controllers\AuthController;
 
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
-Route::get('shop', [LandingPageController::class, 'shop'])->name('shop');
-Route::get('shop-detail', [LandingPageController::class, 'shop_detail'])->name('shop_detail');
+Route::get('umkm', [LandingPageController::class, 'umkm'])->name('umkm');
+Route::get('informasi', [LandingPageController::class, 'informasi'])->name('informasi');
 Route::get('chart', [LandingPageController::class, 'chart'])->name('chart');
 Route::get('checkout', [LandingPageController::class, 'checkout'])->name('checkout');
-Route::get('testimoni', [LandingPageController::class, 'testimoni'])->name('testimoni');
+Route::get('pembina', [LandingPageController::class, 'pembina'])->name('pembina');
 Route::get('contact', [LandingPageController::class, 'contact'])->name('contact');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
@@ -29,3 +29,6 @@ Route::prefix('auth')->group(function () {
     Route::post('_login', [AuthController::class, '_login'])->name('_login');
     Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanctum')->name('auth.logout');
 });
+
+Route::get('login', [LandingPageController::class, 'login'])->name('login');
+Route::get('daftar', [LandingPageController::class, 'daftar'])->name('daftar');

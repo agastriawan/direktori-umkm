@@ -14,14 +14,14 @@ class LandingPageController extends Controller
         return view('index');
     }
 
-    public function shop()
+    public function umkm()
     {
-        return view('shop');
+        return view('umkm');
     }
 
-    public function shop_detail()
+    public function informasi()
     {
-        return view('shop-detail');
+        return view('informasi');
     }
 
     public function chart()
@@ -34,13 +34,21 @@ class LandingPageController extends Controller
         return view('checkout');
     }
 
-    public function testimoni()
+    public function pembina()
     {
-        return view('testimoni');
+        return view('pembina');
     }
 
     public function contact()
     {
         return view('contact');
+    }
+    public function login()
+    {
+        return view('login');
+    }
+    public function daftar()
+    {
+        return view('daftar');
     }
 }
