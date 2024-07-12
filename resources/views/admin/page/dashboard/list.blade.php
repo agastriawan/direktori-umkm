@@ -30,14 +30,7 @@
                                 <table class="table card-table table-vcenter text-nowrap datatable">
                                     <thead>
                                         <tr>
-                                            <th class="w-1">NIM
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick"
-                                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M6 15l6 -6l6 6" />
-                                                </svg>
+                                            <th>NIM
                                             </th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
@@ -53,6 +46,46 @@
                                             </td>
                                             <td>
                                                 088295747113
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="text-secondary">0110223143</span></td>
+                                            <td>Arby Ali Amaludin</td>
+                                            <td>
+                                                Cibinong, Bogor
+                                            </td>
+                                            <td>
+                                                081295563905
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="text-secondary">0110223153</span></td>
+                                            <td>Egi Vrinaldi A</td>
+                                            <td>
+                                                Citayam, Depok
+                                            </td>
+                                            <td>
+                                                089509929298
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="text-secondary">0110223151</span></td>
+                                            <td>Kafi Rizal</td>
+                                            <td>
+                                                Cilodong, Depok
+                                            </td>
+                                            <td>
+                                                085156629197
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="text-secondary">0110223304</span></td>
+                                            <td>Zhairan Ahmad</td>
+                                            <td>
+                                                Bojong Gede, Bogor
+                                            </td>
+                                            <td>
+                                                085814155342
                                             </td>
                                         </tr>
                                     </tbody>
