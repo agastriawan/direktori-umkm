@@ -70,7 +70,7 @@
                                         </tr>
                                         <tr>
                                             <td><span class="text-secondary">0110223151</span></td>
-                                            <td>Kafi Rizal</td>
+                                            <td>Kafi Rijal</td>
                                             <td>
                                                 Cilodong, Depok
                                             </td>
