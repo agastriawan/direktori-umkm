@@ -50,7 +50,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-6">
                                                         <img src="{{ asset('images') . '/' . $umkm->image }}"
-                                                            class="img-fluid rounded-circle w-100" alt="">
+                                                            class="img-fluid rounded w-100" alt="">
                                                     </div>
                                                     <div class="col-6">
                                                         @php

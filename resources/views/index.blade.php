@@ -113,7 +113,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-6">
                                         <img src="{{ asset('images') .'/'. $umkm->image }}"
-                                            class="img-fluid rounded-circle" width="100%" height="100%" alt="">
+                                            class="img-fluid rounded" width="100%" height="100%" alt="">
                                     </div>
                                     <div class="col-6">
                                         <b><a href="{{ url('informasi') .'/'. $umkm->id }}" class="mb-2 text-dark">{{ $umkm->nama }}</a></b>
