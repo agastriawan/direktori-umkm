@@ -10,7 +10,7 @@
                 <div class="row g-2 align-items-center">
                     <div class="col">
                         <h2 class="page-title">
-                            Pembina
+                            Provinsi
                         </h2>
                     </div>
                     <div class="col-auto ms-auto d-print-none">
@@ -24,7 +24,7 @@
                                     <path d="M12 5l0 14" />
                                     <path d="M5 12l14 0" />
                                 </svg>
-                                Tambah Pembina Baru
+                                Tambah Provinsi Baru
                             </a>
                             <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal"
                                 data-bs-target="#modal-report" aria-label="Create new report">
@@ -69,17 +69,17 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Daftar Pembina</h3>
+                                <h3 class="card-title">Daftar Provinsi</h3>
                             </div>
                             <div class="table-responsive p-3">
-                                <table id="pembinaTable" class="table table-striped" style="width:100%">
+                                <table id="provinsiTable" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nama Pembina</th>
-                                            <th>Gender</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Keahlian</th>
+                                            <th>Nama Provinsi</th>
+                                            <th>Nama Ibu Kota</th>
+                                            <th>Latitude</th>
+                                            <th>Longitude</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -99,87 +99,44 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Pembina</h5>
+                    <h5 class="modal-title">Tambah Provinsi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ url('pembina/_post_pembina') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('provinsi/_post_provinsi') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Nama Pembina</label>
+                                <label class="form-label">Nama Provinsi</label>
                                 <input type="text" class="form-control" name="nama" id="nama" required
                                     value="{{ old('nama') }}">
                                 @error('nama')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Jenis Kelamin</label>
-                                <select name="gender" id="gender" class="form-control" required>
-                                    <option value="" {{ old('gender') == '' ? 'selected' : '' }}>Jenis Kelamin
-                                    </option>
-                                    <option value="Laki-laki" {{ old('gender') == 'Laki-laki' ? 'selected' : '' }}>
-                                        Laki-Laki</option>
-                                    <option value="Perempuan" {{ old('gender') == 'Perempuan' ? 'selected' : '' }}>
-                                        Perempuan</option>
-                                </select>
-                                @error('gender')
+                                <label class="form-label">Nama Ibu Kota</label>
+                                <input type="text" class="form-control" name="ibukota" id="ibukota" required
+                                    value="{{ old('ibukota') }}">
+                                @error('ibukota')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" required
-                                    value="{{ old('tgl_lahir') }}">
-                                @error('tgl_lahir')
+                                <label class="form-label">Latitude</label>
+                                <input type="text" class="form-control" name="latitude" id="latitude" required
+                                    value="{{ old('latitude') }}">
+                                @error('latitude')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Tempat Lahir</label>
-                                <input type="text" class="form-control" name="tmp_lahir" id="tmp_lahir" required
-                                    value="{{ old('tmp_lahir') }}">
-                                @error('tmp_lahir')
+                                <label class="form-label">Longitude</label>
+                                <input type="text" class="form-control" name="longitude" id="longitude" required
+                                    value="{{ old('longitude') }}">
+                                @error('longitude')
                                     <div>{{ $message }}</div>
                                 @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Keahlian</label>
-                                <input type="text" class="form-control" name="keahlian" id="keahlian" required
-                                    value="{{ old('keahlian') }}">
-                                @error('keahlian')
-                                    <div>{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Rating</label>
-                                <select name="rating" id="rating" class="form-control" required>
-                                    <option value="0">Pilih Rating</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                @error('rating')
-                                    <div>{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Image</label>
-                                <input type="file" class="form-control" name="image" id="image" required>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label class="form-label">Quote</label>
-                                <textarea class="form-control" rows="3" name="quote" id="quote"></textarea>
                             </div>
                         </div>
                     </div>
@@ -198,92 +155,47 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Ubah Pembina</h5>
+                    <h5 class="modal-title">Ubah Provinsi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="edit-pembina-form" action="{{ url('pembina/_update_pembina') }}" method="POST"
+                <form id="edit-provinsi-form" action="{{ url('provinsi/_update_provinsi') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
-                        <input type="hidden" name="id" id="pembina_id_edit">
+                        <input type="hidden" name="id" id="provinsi_id_edit">
 
                         <div class="row">
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Nama Pembina</label>
+                                <label class="form-label">Nama Provinsi</label>
                                 <input type="text" class="form-control" name="nama" id="nama_edit" required
                                     value="{{ old('nama') }}">
                                 @error('nama')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Jenis Kelamin</label>
-                                <select name="gender" id="gender_edit" class="form-control" required>
-                                    <option value="" {{ old('gender') == '' ? 'selected' : '' }}>Jenis Kelamin
-                                    </option>
-                                    <option value="Laki-laki" {{ old('gender') == 'Laki-laki' ? 'selected' : '' }}>
-                                        Laki-Laki</option>
-                                    <option value="Perempuan" {{ old('gender') == 'Perempuan' ? 'selected' : '' }}>
-                                        Perempuan</option>
-                                </select>
-                                @error('gender')
+                                <label class="form-label">Nama Ibu Kota</label>
+                                <input type="text" class="form-control" name="ibukota" id="ibukota_edit" required
+                                    value="{{ old('ibukota') }}">
+                                @error('ibukota')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir_edit" required
-                                    value="{{ old('tgl_lahir') }}">
-                                @error('tgl_lahir')
+                                <label class="form-label">Latitude</label>
+                                <input type="text" class="form-control" name="latitude" id="latitude_edit" required
+                                    value="{{ old('latitude') }}">
+                                @error('latitude')
                                     <div>{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">Tempat Lahir</label>
-                                <input type="text" class="form-control" name="tmp_lahir" id="tmp_lahir_edit" required
-                                    value="{{ old('tmp_lahir') }}">
-                                @error('tmp_lahir')
+                                <label class="form-label">Longitude</label>
+                                <input type="text" class="form-control" name="longitude" id="longitude_edit" required
+                                    value="{{ old('longitude') }}">
+                                @error('longitude')
                                     <div>{{ $message }}</div>
                                 @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Keahlian</label>
-                                <input type="text" class="form-control" name="keahlian" id="keahlian_edit" required
-                                    value="{{ old('keahlian') }}">
-                                @error('keahlian')
-                                    <div>{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Rating</label>
-                                <select name="rating" id="rating_edit" class="form-control" required>
-                                    <option value="0">Pilih Rating</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                @error('rating')
-                                    <div>{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="col-lg-6 mb-3">
-                                <label class="form-label">Image</label>
-                                <img class="mb-2" id="previewImage" src="" width="100px" height="50px"
-                                    alt="Preview Image">
-                                <input type="file" class="form-control" name="image" id="image_edit">
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label class="form-label">Quote</label>
-                                <textarea class="form-control" rows="3" name="quote" id="quote_edit"></textarea>
                             </div>
                         </div>
                     </div>
@@ -299,11 +211,11 @@
 @section('template_admin_scripts')
     <script>
         $(document).ready(function() {
-            $('#pembinaTable').DataTable({
+            $('#provinsiTable').DataTable({
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('pembina/_list_pembina') }}",
+                    url: "{{ url('provinsi/_list_provinsi') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': token
@@ -321,13 +233,13 @@
                         data: 'nama',
                     },
                     {
-                        data: 'gender',
+                        data: 'ibukota',
                     },
                     {
-                        data: 'tmp_lahir',
+                        data: 'latitude',
                     },
                     {
-                        data: 'keahlian',
+                        data: 'longitude',
                     },
                     {
                         data: "id",
@@ -343,9 +255,9 @@
             });
         });
 
-        $('#pembinaTable').on('click', '.delete-btn', function(e) {
+        $('#provinsiTable').on('click', '.delete-btn', function(e) {
             e.preventDefault();
-            var pembinaId = $(this).data('id');
+            var provinsiId = $(this).data('id');
             Swal.fire({
                 title: 'Anda yakin?',
                 text: "Data ini akan dihapus secara permanen!",
@@ -357,7 +269,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('pembina/_delete/') }}/${pembinaId}`,
+                        url: `{{ url('provinsi/_delete/') }}/${provinsiId}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': token
@@ -369,13 +281,13 @@
                                 icon: 'success',
                                 confirmButtonText: 'OK'
                             });
-                            $('#pembinaTable').DataTable().ajax.reload();
+                            $('#provinsiTable').DataTable().ajax.reload();
                         },
                         error: function(error) {
                             console.error('Gagal menghapus data:', error);
                             Swal.fire({
                                 title: 'Gagal!',
-                                text: 'Data gagal dihapus Karena Id Pembina Sudah digunakan di umkm',
+                                text: 'Data gagal dihapus karena ID Provinsi ini masih digunakan sebagai foreign key di tabel UMKM.',
                                 icon: 'error',
                                 confirmButtonText: 'OK'
                             });
@@ -385,27 +297,22 @@
             });
         });
 
-        $('#pembinaTable').on('click', '.edit-btn', function(e) {
+        $('#provinsiTable').on('click', '.edit-btn', function(e) {
             e.preventDefault();
-            var pembinaId = $(this).data('id');
+            var provinsiId = $(this).data('id');
 
             $.ajax({
-                url: `{{ url('pembina/_get_pembina_by_id/') }}/${pembinaId}`,
+                url: `{{ url('provinsi/_get_provinsi_by_id/') }}/${provinsiId}`,
                 type: 'POST',
                 headers: {
                     'X-CSRF-TOKEN': token
                 },
                 success: function(response) {
-                    $('#pembina_id_edit').val(response.id);
+                    $('#provinsi_id_edit').val(response.id);
                     $('#nama_edit').val(response.nama);
-                    $('#gender_edit').val(response.gender);
-                    $('#tgl_lahir_edit').val(response.tgl_lahir);
-                    $('#tmp_lahir_edit').val(response.tmp_lahir);
-                    $('#keahlian_edit').val(response.keahlian);
-                    $('#quote_edit').val(response.quote);
-                    $('#rating_edit').val(response.rating);
-
-                    $('#previewImage').attr('src', "{{ asset('images') }}/" + response.image);
+                    $('#ibukota_edit').val(response.ibukota);
+                    $('#latitude_edit').val(response.latitude);
+                    $('#longitude_edit').val(response.longitude);
 
                     $('#modal-edit').modal('show');
                 },

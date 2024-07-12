@@ -26,38 +26,16 @@
                                     <div class="mb-3 mt-3">
                                         <h4>Kategori</h4>
                                         <ul class="list-unstyled fruite-categorie">
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fa-solid fa-laptop me-2"></i>Elektronik</a>
-                                                    <span>(3)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i
-                                                            class="fa-solid fa-hands-holding-circle me-2"></i>Kerajinan</a>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fa-solid fa-shirt me-2"></i>Fashion</a>
-                                                    <span>(2)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fa-solid fa-bowl-rice me-2"></i>Makanan dan
-                                                        Minuman</a>
-                                                    <span>(8)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fa-solid fa-person me-2"></i>Bidang Jasa</a>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </li>
+                                            @if (!empty($kategori))
+                                                @foreach ($kategori as $kat)
+                                                    <li>
+                                                        <div class="d-flex justify-content-between fruite-name">
+                                                            <a href="#">{{ $kat->kategori_nama }}</a>
+                                                            <span>({{ $kat->jumlah }})</span>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
@@ -65,139 +43,66 @@
                         </div>
                         <div class="col-lg-9">
                             <div class="row g-4 justify-content-center">
-                                <!-- Product Start -->
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
+                                @if (!empty($umkms))
+                                    @foreach ($umkms as $umkm)
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="p-4 rounded bg-light">
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="{{ asset('images') . '/' . $umkm->image }}"
+                                                            class="img-fluid rounded-circle w-100" alt="">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        @php
+                                                            $words = explode(' ', $umkm->nama);
+                                                            $limitedName = implode(' ', array_slice($words, 0, 2));
+                                                        @endphp
+
+                                                        <a href="{{ url('informasi' .'/'. $umkm->id ) }}"
+                                                            class=" mb-1">{{ $limitedName }}{{ count($words) > 2 ? '...' : '' }}</a>
+                                                        <b>
+                                                            <p class="mb-3">RP.
+                                                                {{ number_format((float) $umkm->harga, 0, ',', '.') }}</p>
+                                                        </b>
+                                                        <div class="d-flex my-3">{{ $umkm->pemilik }}
+                                                        </div>
+                                                        <a href="#"
+                                                            class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
+                                                    </div>
                                                 </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
-                                                </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
-                                                </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
-                                                </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
-                                                </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="p-4 rounded bg-light">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <img src="{{ asset('assets/img/teh poci.webp') }}"
-                                                    class="img-fluid rounded-circle w-100" alt="">
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{ url('informasi') }}" class="h5">Teh Poci Milo</a>
-                                                <h5 class="mb-3">RP. 9.000</h5>
-                                                <div class="d-flex my-3">
-                                                    <i class="fa-solid fa-user"> Kafi</i>
-                                                </div>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Beli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endforeach
+                                @endif
+
                                 <div class="col-12">
                                     <div class="pagination d-flex justify-content-center mt-5">
-                                        <a href="#" class="rounded">&laquo;</a>
-                                        <a href="#" class="active rounded">1</a>
-                                        <a href="#" class="rounded">2</a>
-                                        <a href="#" class="rounded">3</a>
-                                        <a href="#" class="rounded">4</a>
-                                        <a href="#" class="rounded">5</a>
-                                        <a href="#" class="rounded">6</a>
-                                        <a href="#" class="rounded">&raquo;</a>
+                                        {{-- Previous Page Link --}}
+                                        @if ($umkms->onFirstPage())
+                                            <a href="#" class="rounded disabled">&laquo;</a>
+                                        @else
+                                            <a href="{{ $umkms->previousPageUrl() }}" class="rounded">&laquo;</a>
+                                        @endif
+
+                                        {{-- Pagination Elements --}}
+                                        @for ($i = 1; $i <= $umkms->lastPage(); $i++)
+                                            @if ($i == $umkms->currentPage())
+                                                <a href="#" class="active rounded">{{ $i }}</a>
+                                            @else
+                                                <a href="{{ $umkms->url($i) }}" class="rounded">{{ $i }}</a>
+                                            @endif
+                                        @endfor
+
+                                        {{-- Next Page Link --}}
+                                        @if ($umkms->hasMorePages())
+                                            <a href="{{ $umkms->nextPageUrl() }}" class="rounded">&raquo;</a>
+                                        @else
+                                            <a href="#" class="rounded disabled">&raquo;</a>
+                                        @endif
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

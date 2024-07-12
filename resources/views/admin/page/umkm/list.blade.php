@@ -4,602 +4,703 @@
 @endsection
 
 @section('content_admin')
-<div class="page-wrapper">
-    <!-- Page header -->
-    <div class="page-header d-print-none">
-        <div class="container-xl">
-            <div class="row g-2 align-items-center">
-                <div class="col">
-                    <!-- Page pre-title -->
-                    {{-- <div class="page-pretitle">
-                        Overview
-                    </div> --}}
-                    <h2 class="page-title">
-                        UMKM
-                    </h2>
-                </div>
-                <!-- Page title actions -->
-                <div class="col-auto ms-auto d-print-none">
-                    <div class="btn-list">
-                        <span class="d-none d-sm-inline">
-                            <a href="#" class="btn">
-                                New view
+    <div class="page-wrapper">
+        <div class="page-header d-print-none">
+            <div class="container-xl">
+                <div class="row g-2 align-items-center">
+                    <div class="col">
+                        <h2 class="page-title">
+                            UMKM
+                        </h2>
+                    </div>
+                    <div class="col-auto ms-auto d-print-none">
+                        <div class="btn-list">
+                            <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
+                                data-bs-target="#modal-report">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 5l0 14" />
+                                    <path d="M5 12l14 0" />
+                                </svg>
+                                Tambah UMKM Baru
                             </a>
-                        </span>
-                        <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
-                            data-bs-target="#modal-report">
-                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 5l0 14" />
-                                <path d="M5 12l14 0" />
-                            </svg>
-                            Create new report
-                        </a>
-                        <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal"
-                            data-bs-target="#modal-report" aria-label="Create new report">
-                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 5l0 14" />
-                                <path d="M5 12l14 0" />
-                            </svg>
-                        </a>
+                            <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal"
+                                data-bs-target="#modal-report" aria-label="Create new report">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 5l0 14" />
+                                    <path d="M5 12l14 0" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Page body -->
-    <div class="page-body">
-        <div class="container-xl">
-            <div class="row row-deck row-cards">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Invoices</h3>
-                        </div>
-                        <div class="card-body border-bottom py-3">
-                            <div class="d-flex">
-                                <div class="text-secondary">
-                                    Show
-                                    <div class="mx-2 d-inline-block">
-                                        <input type="text" class="form-control form-control-sm"
-                                            value="8" size="3" aria-label="Invoices count">
-                                    </div>
-                                    entries
-                                </div>
-                                <div class="ms-auto text-secondary">
-                                    Search:
-                                    <div class="ms-2 d-inline-block">
-                                        <input type="text" class="form-control form-control-sm"
-                                            aria-label="Search invoice">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table card-table table-vcenter text-nowrap datatable">
-                                <thead>
-                                    <tr>
-                                        <th class="w-1"><input class="form-check-input m-0 align-middle"
-                                                type="checkbox" aria-label="Select all invoices"></th>
-                                        <th class="w-1">No.
-                                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-sm icon-thick" width="24" height="24"
-                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M6 15l6 -6l6 6" />
-                                            </svg>
-                                        </th>
-                                        <th>Invoice Subject</th>
-                                        <th>Client</th>
-                                        <th>VAT No.</th>
-                                        <th>Created</th>
-                                        <th>Status</th>
-                                        <th>Price</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001401</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Design
-                                                Works</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-us me-2"></span>
-                                            Carlson Limited
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            15 Dec 2017
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-success me-1"></span> Paid
-                                        </td>
-                                        <td>$887</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001402</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">UX
-                                                Wireframes</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-gb me-2"></span>
-                                            Adobe
-                                        </td>
-                                        <td>
-                                            87956421
-                                        </td>
-                                        <td>
-                                            12 Apr 2017
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-warning me-1"></span> Pending
-                                        </td>
-                                        <td>$1200</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001403</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">New
-                                                Dashboard</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-de me-2"></span>
-                                            Bluewolf
-                                        </td>
-                                        <td>
-                                            87952621
-                                        </td>
-                                        <td>
-                                            23 Oct 2017
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-warning me-1"></span> Pending
-                                        </td>
-                                        <td>$534</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001404</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing
-                                                Page</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-br me-2"></span>
-                                            Salesforce
-                                        </td>
-                                        <td>
-                                            87953421
-                                        </td>
-                                        <td>
-                                            2 Sep 2017
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
-                                        </td>
-                                        <td>$1500</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001405</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing
-                                                Templates</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-pl me-2"></span>
-                                            Printic
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            29 Jan 2018
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-danger me-1"></span> Paid Today
-                                        </td>
-                                        <td>$648</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001406</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales
-                                                Presentation</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-br me-2"></span>
-                                            Tabdaq
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            4 Feb 2018
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
-                                        </td>
-                                        <td>$300</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001407</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo &
-                                                Print</a></td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-us me-2"></span>
-                                            Apple
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            22 Mar 2018
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-success me-1"></span> Paid Today
-                                        </td>
-                                        <td>$2500</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                aria-label="Select invoice"></td>
-                                        <td><span class="text-secondary">001408</span></td>
-                                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a>
-                                        </td>
-                                        <td>
-                                            <span class="flag flag-xs flag-country-pl me-2"></span>
-                                            Tookapic
-                                        </td>
-                                        <td>
-                                            87956621
-                                        </td>
-                                        <td>
-                                            13 May 2018
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-success me-1"></span> Paid Today
-                                        </td>
-                                        <td>$940</td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                    data-bs-boundary="viewport"
-                                                    data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer d-flex align-items-center">
-                            <p class="m-0 text-secondary">Showing <span>1</span> to <span>8</span> of
-                                <span>16</span> entries</p>
-                            <ul class="pagination m-0 ms-auto">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M15 6l-6 6l6 6" />
-                                        </svg>
-                                        prev
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M9 6l6 6l-6 6" />
-                                        </svg>
-                                    </a>
-                                </li>
+
+        <div class="page-body">
+            <div class="container-xl">
+                <div class="row mt-2 g-2 align-items-center">
+                    @if ($errors->any())
+                        <div class="alert alert-danger text-center">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
                             </ul>
                         </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger text-center">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success text-center">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="row row-deck row-cards">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Daftar UMKM</h3>
+                            </div>
+                            <div class="table-responsive p-3">
+                                <table id="umkmTable" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nama Toko</th>
+                                            <th>Pemilik</th>
+                                            <th>Harga</th>
+                                            <th>Kategori</th>
+                                            <th>Pembina</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer footer-transparent d-print-none">
-        <div class="container-xl">
-            <div class="row text-center align-items-center flex-row-reverse">
-                <div class="col-lg-auto ms-lg-auto">
-                    <ul class="list-inline list-inline-dots mb-0">
-                        <li class="list-inline-item"><a href="https://tabler.io/docs" target="_blank"
-                                class="link-secondary" rel="noopener">Documentation</a></li>
-                        <li class="list-inline-item"><a href="./license.html"
-                                class="link-secondary">License</a></li>
-                        <li class="list-inline-item"><a href="https://github.com/tabler/tabler"
-                                target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
-                        <li class="list-inline-item">
-                            <a href="https://github.com/sponsors/codecalm" target="_blank"
-                                class="link-secondary" rel="noopener">
-                                <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon text-pink icon-filled icon-inline" width="24"
-                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-                                </svg>
-                                Sponsor
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                    <ul class="list-inline list-inline-dots mb-0">
-                        <li class="list-inline-item">
-                            Copyright &copy; 2023
-                            <a href="." class="link-secondary">Tabler</a>.
-                            All rights reserved.
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="./changelog.html" class="link-secondary" rel="noopener">
-                                v1.0.0-beta20
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
 
-    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New report</h5>
+                    <h5 class="modal-title">Tambah UMKM</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
-                    </div>
-                    <label class="form-label">Report type</label>
-                    <div class="form-selectgroup-boxes row mb-3">
-                        <div class="col-lg-6">
-                            <label class="form-selectgroup-item">
-                                <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                    checked>
-                                <span class="form-selectgroup-label d-flex align-items-center p-3">
-                                    <span class="me-3">
-                                        <span class="form-selectgroup-check"></span>
-                                    </span>
-                                    <span class="form-selectgroup-label-content">
-                                        <span class="form-selectgroup-title strong mb-1">Simple</span>
-                                        <span class="d-block text-secondary">Provide only basic data needed for the
-                                            report</span>
-                                    </span>
-                                </span>
-                            </label>
-                        </div>
-                        <div class="col-lg-6">
-                            <label class="form-selectgroup-item">
-                                <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                                <span class="form-selectgroup-label d-flex align-items-center p-3">
-                                    <span class="me-3">
-                                        <span class="form-selectgroup-check"></span>
-                                    </span>
-                                    <span class="form-selectgroup-label-content">
-                                        <span class="form-selectgroup-title strong mb-1">Advanced</span>
-                                        <span class="d-block text-secondary">Insert charts and additional advanced analyses
-                                            to be inserted in the report</span>
-                                    </span>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="mb-3">
-                                <label class="form-label">Report url</label>
-                                <div class="input-group input-group-flat">
-                                    <span class="input-group-text">
-                                        https://tabler.io/reports/
-                                    </span>
-                                    <input type="text" class="form-control ps-0" value="report-01" autocomplete="off">
-                                </div>
+                <form action="{{ url('umkm/_post_umkm') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Nama Toko</label>
+                                <input type="text" class="form-control" name="nama" id="nama" required
+                                    value="{{ old('nama') }}">
+                                @error('nama')
+                                    <div>{{ $message }}</div>
+                                @enderror
                             </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label class="form-label">Visibility</label>
-                                <select class="form-select">
-                                    <option value="1" selected>Private</option>
-                                    <option value="2">Public</option>
-                                    <option value="3">Hidden</option>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Pemilik</label>
+                                <input type="text" class="form-control" name="pemilik" id="pemilik" required
+                                    value="{{ old('pemilik') }}">
+                                @error('pemilik')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email" id="email" required
+                                    value="{{ old('email') }}">
+                                @error('email')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Website</label>
+                                <input type="text" class="form-control" name="website" id="website" required
+                                    value="{{ old('website') }}">
+                                @error('website')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Provinsi</label>
+                                <select id="id_provinsi" name="id_provinsi" class="form-control" required>
+                                    <option selected>Provinsi</option>
                                 </select>
                             </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Kabupaten/Kota</label>
+                                <select id="id_kabkota" name="id_kabkota" class="form-control" required>
+                                    <option selected>Kabupaten Kota</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Kategori</label>
+                                <select id="id_kategori" name="id_kategori" class="form-control" required>
+                                    <option selected>Kategori</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Pembina</label>
+                                <select id="id_pembina" name="id_pembina" class="form-control" required>
+                                    <option selected>Pembina</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Rating</label>
+                                <select name="rating" id="rating" class="form-control" required>
+                                    <option value="0">Pilih Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                @error('rating')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Image</label>
+                                <input type="file" class="form-control" name="image" id="image" required>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Modal</label>
+                                <input type="number" class="form-control" name="modal" id="modal" required>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Harga</label>
+                                <input type="number" class="form-control" name="harga" id="harga" required>
+                            </div>
+
+                            <div class="col-lg-12 mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <textarea class="form-control" rows="3" name="deskripsi" id="deskripsi"></textarea>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label class="form-label">Alamat</label>
+                                <textarea class="form-control" rows="3" name="alamat" id="alamat"></textarea>
+                            </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary ms-auto">
+                            Kirim
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-blur fade" id="modal-edit" tabindex="-1" role="dialog" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah UMKM</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label">Client name</label>
-                                <input type="text" class="form-control">
+                <form id="edit-umkm-form" action="{{ url('umkm/_update_umkm') }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="umkm_id_edit">
+
+                        <div class="row">
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Nama Toko</label>
+                                <input type="text" class="form-control" name="nama" id="nama_edit" required>
+                                @error('nama')
+                                    <div>{{ $message }}</div>
+                                @enderror
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label">Reporting period</label>
-                                <input type="date" class="form-control">
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Pemilik</label>
+                                <input type="text" class="form-control" name="pemilik" id="pemilik_edit" required>
+                                @error('pemilik')
+                                    <div>{{ $message }}</div>
+                                @enderror
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div>
-                                <label class="form-label">Additional information</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email" id="email_edit" required>
+                                @error('email')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Website</label>
+                                <input type="text" class="form-control" name="website" id="website_edit" required>
+                                @error('website')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Provinsi</label>
+                                <select id="id_provinsi_edit" name="id_provinsi" class="form-control" required>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Kabupaten/Kota</label>
+                                <select id="id_kabkota_edit" name="id_kabkota" class="form-control" required>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Kategori</label>
+                                <select id="id_kategori_edit" name="id_kategori" class="form-control" required>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Pembina</label>
+                                <select id="id_pembina_edit" name="id_pembina" class="form-control" required>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Rating</label>
+                                <select name="rating" id="rating_edit" class="form-control" required>
+                                    <option value="0">Pilih Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                @error('rating')
+                                    <div>{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Image</label>
+                                <img class="mb-2" id="previewImage" src="" width="100px" height="50px"
+                                    alt="Preview Image">
+                                <input type="file" class="form-control" name="image" id="image_edit">
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Modal</label>
+                                <input type="number" class="form-control" name="modal" id="modal_edit" required>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-label">Harga</label>
+                                <input type="number" class="form-control" name="harga" id="harga_edit" required>
+                            </div>
+
+                            <div class="col-lg-12 mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <textarea class="form-control" rows="3" name="deskripsi" id="deskripsi_edit"></textarea>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <label class="form-label">Alamat</label>
+                                <textarea class="form-control" rows="3" name="alamat" id="alamat_edit"></textarea>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-                        Cancel
-                    </a>
-                    <a href="#" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 5l0 14" />
-                            <path d="M5 12l14 0" />
-                        </svg>
-                        Create new report
-                    </a>
-                </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary ms-auto">Kirim</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 @endsection
 
 @section('template_admin_scripts')
+    <script>
+        $(document).ready(function() {
+            $('#umkmTable').DataTable({
+                processing: true,
+                serverSide: false,
+                ajax: {
+                    url: "{{ url('umkm/_get_umkm') }}",
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': token
+                    }
+                },
+                columns: [{
+                        data: null,
+                        className: 'text-center',
+                        orderable: true,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        data: 'nama',
+                    },
+                    {
+                        data: 'pemilik',
+                    },
+                    {
+                        data: 'harga',
+                    },
+                    {
+                        data: 'kategori_nama',
+                    },
+                    {
+                        data: 'pembina_nama',
+                    },
+                    {
+                        data: "id",
+                        render: function(data, type, row, meta) {
+                            var deleteLink =
+                                `<a href="#" class="btn btn-danger btn-sm delete-btn m-2" data-id="${data}"><i class="bi bi-trash"></i></a>`;
+                            var editLink =
+                                `<a href="#" class="btn btn-primary btn-sm edit-btn" data-id="${data}"><i class="bi bi-pencil"></i></a>`;
+                            return deleteLink + ' ' + editLink;
+                        }
+                    }
+
+                ]
+            });
+
+            getProvinsi();
+            getKategori();
+            getPembina();
+        });
+
+        $('#umkmTable').on('click', '.delete-btn', function(e) {
+            e.preventDefault();
+            var umkmId = $(this).data('id');
+            Swal.fire({
+                title: 'Anda yakin?',
+                text: "Data ini akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `{{ url('umkm/_delete/') }}/${umkmId}`,
+                        type: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': token
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                text: 'Data berhasil dihapus.',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            });
+                            $('#umkmTable').DataTable().ajax.reload();
+                        },
+                        error: function(error) {
+                            console.error('Gagal menghapus data:', error);
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'Data gagal dihapus.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+        $('#id_provinsi').on('change', function() {
+            var provinsiId = $(this).val();
+            if (provinsiId) {
+                getKota(provinsiId);
+            } else {
+                $('#id_kabkota').empty();
+                $('#id_kabkota').append('<option selected>Kabupaten Kota</option>');
+            }
+        });
+
+        function getProvinsi() {
+            $.ajax({
+                url: "{{ url('auth/provinsi') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var provinceSelect = $('#id_provinsi');
+                    provinceSelect.empty();
+                    provinceSelect.append('<option selected>Provinsi</option>');
+                    $.each(data, function(key, value) {
+                        let selected = (value.id == "{{ old('id_provinsi') }}") ?
+                            'selected' : '';
+                        provinceSelect.append('<option value="' + value.id + '" ' +
+                            selected + '>' + value.nama + '</option>');
+                    });
+                    if ("{{ old('id_provinsi') }}") {
+                        getKota("{{ old('id_provinsi') }}");
+                    }
+                }
+            });
+        }
+
+        function getKategori() {
+            $.ajax({
+                url: "{{ url('umkm/_kategori_umkm') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var provinceSelect = $('#id_kategori');
+                    provinceSelect.empty();
+                    provinceSelect.append('<option selected>Kategori</option>');
+                    $.each(data, function(key, value) {
+                        let selected = (value.id == "{{ old('id_kategori') }}") ?
+                            'selected' : '';
+                        provinceSelect.append('<option value="' + value.id + '" ' +
+                            selected + '>' + value.nama + '</option>');
+                    });
+                    if ("{{ old('id_kategori') }}") {
+                        getKota("{{ old('id_kategori') }}");
+                    }
+                }
+            });
+        }
+
+        function getPembina() {
+            $.ajax({
+                url: "{{ url('pembina/_pembina') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var provinceSelect = $('#id_pembina');
+                    provinceSelect.empty();
+                    provinceSelect.append('<option selected>Pembina</option>');
+                    $.each(data, function(key, value) {
+                        let selected = (value.id == "{{ old('id_pembina') }}") ?
+                            'selected' : '';
+                        provinceSelect.append('<option value="' + value.id + '" ' +
+                            selected + '>' + value.nama + '</option>');
+                    });
+                    if ("{{ old('id_pembina') }}") {
+                        getKota("{{ old('id_pembina') }}");
+                    }
+                }
+            });
+        }
+
+        function getKota(provinsiId) {
+            $.ajax({
+                url: "{{ url('auth/kota') }}/" + provinsiId,
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var citySelect = $('#id_kabkota');
+                    citySelect.empty();
+                    citySelect.append('<option selected>Kabupaten Kota</option>');
+                    $.each(data, function(key, value) {
+                        let selected = (value.id == "{{ old('id_kabkota') }}") ?
+                            'selected' : '';
+                        citySelect.append('<option value="' + value.id + '" ' + selected +
+                            '>' + value.nama + '</option>');
+                    });
+                }
+            });
+        }
+
+
+        $('#id_provinsi_edit').on('change', function() {
+            var provinsiId = $(this).val();
+            if (provinsiId) {
+                getKota(provinsiId);
+            } else {
+                $('#id_kabkota_edit').empty();
+                $('#id_kabkota_edit').append('<option selected>Kabupaten Kota</option>');
+            }
+        });
+
+        $('#umkmTable').on('click', '.edit-btn', function(e) {
+            e.preventDefault();
+            var umkmId = $(this).data('id');
+
+            $.ajax({
+                url: `{{ url('umkm/_get_umkm_by_id/') }}/${umkmId}`,
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(response) {
+                    $('#umkm_id_edit').val(response.id);
+                    $('#nama_edit').val(response.nama);
+                    $('#pemilik_edit').val(response.pemilik);
+                    $('#email_edit').val(response.email);
+                    $('#website_edit').val(response.website);
+                    $('#modal_edit').val(response.modal);
+                    $('#harga_edit').val(response.harga);
+                    $('#alamat_edit').val(response.alamat);
+                    $('#rating_edit').val(response.rating);
+                    $('#deskripsi_edit').val(response.deskripsi);
+
+                    $('#previewImage').attr('src', "{{ asset('images') }}/" + response.image);
+
+                    getProvinsiEdit(response.provinsi_id);
+                    getKategoriEdit(response.kategori_umkm_id);
+                    getPembinaEdit(response.pembina_id);
+                    getKotaAllEdit(response.kabkota_id);
+
+                    $('#modal-edit').modal('show');
+                },
+                error: function(error) {
+                    console.error('Gagal mendapatkan data:', error);
+                }
+            });
+        });
+
+        $('#id_provinsi_edit').on('change', function() {
+            var provinsiId = $(this).val();
+            console.log(provinsiId);
+            if (provinsiId) {
+                getKotaEdit(provinsiId);
+            } else {
+                $('#id_kabkota_edit').empty();
+                $('#id_kabkota_edit').append('<option>Kabupaten Kota</option>');
+            }
+        });
+
+        $('#image_edit').on('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#previewImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        function getProvinsiEdit(id = null) {
+            $.ajax({
+                url: "{{ url('auth/provinsi') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var provinceSelect = $('#id_provinsi_edit');
+                    provinceSelect.empty();
+                    provinceSelect.append('<option>Provinsi</option>');
+                    $.each(data, function(key, value) {
+                        var selected = (id && id == value.id) ? 'selected' : '';
+                        provinceSelect.append('<option value="' + value.id + '" ' + selected + '>' +
+                            value.nama + '</option>');
+                    });
+                }
+            });
+        }
+
+        function getKotaAllEdit(id = null) {
+            $.ajax({
+                url: "{{ url('auth/_kota') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var provinceSelect = $('#id_kabkota_edit');
+                    provinceSelect.empty();
+                    provinceSelect.append('<option>Kabupaten/Kota</option>');
+                    $.each(data, function(key, value) {
+                        var selected = (id && id == value.id) ? 'selected' : '';
+                        provinceSelect.append('<option value="' + value.id + '" ' + selected + '>' +
+                            value.nama + '</option>');
+                    });
+                }
+            });
+        }
+
+        function getKategoriEdit(id = null) {
+            $.ajax({
+                url: "{{ url('umkm/_kategori_umkm') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var categorySelect = $('#id_kategori_edit');
+                    categorySelect.empty();
+                    categorySelect.append('<option>Kategori</option>');
+                    $.each(data, function(key, value) {
+                        var selected = (id && id == value.id) ? 'selected' : '';
+                        categorySelect.append('<option value="' + value.id + '" ' + selected + '>' +
+                            value.nama + '</option>');
+                    });
+                }
+            });
+        }
+
+        function getPembinaEdit(id = null) {
+            $.ajax({
+                url: "{{ url('pembina/_pembina') }}",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var pembinaSelect = $('#id_pembina_edit');
+                    pembinaSelect.empty();
+                    pembinaSelect.append('<option>Pembina</option>');
+                    $.each(data, function(key, value) {
+                        var selected = (id && id == value.id) ? 'selected' : '';
+                        pembinaSelect.append('<option value="' + value.id + '" ' + selected + '>' +
+                            value.nama + '</option>');
+                    });
+                }
+            });
+        }
+
+        function getKotaEdit(provinsiId) {
+            $.ajax({
+                url: "{{ url('auth/kota') }}/" + provinsiId,
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                },
+                success: function(data) {
+                    var citySelect = $('#id_kabkota_edit');
+                    citySelect.empty();
+                    citySelect.append('<option>Kabupaten Kota</option>');
+                    $.each(data, function(key, value) {
+                        citySelect.append('<option value="' + value.id + '">' + value.nama +
+                            '</option>');
+                    });
+                }
+            });
+        }
+    </script>
 @endsection

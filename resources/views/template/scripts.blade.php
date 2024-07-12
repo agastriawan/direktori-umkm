@@ -9,22 +9,17 @@
 
     <script>
         $(document).ready(function() {
-            console.log(window.location);
             const pathSegments = window.location.pathname.toLowerCase().split('/');
-            const lastTwoSegments = pathSegments.slice(-2).join('/');
+            const lastOneSegments = pathSegments.slice(-1).join('/');
 
-            if (lastTwoSegments.includes('dashboard')) {
-                $('#nav-item-dashboard').addClass('active');
-                $('#nav-link-dashboard').addClass('active');
-            } else if (lastTwoSegments.includes('umkm')) {
-                $('#nav-item-umkm').addClass('active');
-                $('#nav-link-umkm').addClass('active');
-            } else if (lastTwoSegments.includes('pembina')) {
-                console.log(lastTwoSegments);
-                $('#nav-item-pembina').addClass('active');
+            if (lastOneSegments.includes('contact')) {
+                $('#nav-link-contact').addClass('active');
+            } else if (lastOneSegments.includes('pembina')) {
                 $('#nav-link-pembina').addClass('active');
-            } else {
-                console.log('No matching path found');
+            } else if (lastOneSegments.includes('umkm')) {
+                $('#nav-link-umkm').addClass('active');
+            } else { 
+                $('#nav-link-beranda').addClass('active');
             }
         });
     </script>
